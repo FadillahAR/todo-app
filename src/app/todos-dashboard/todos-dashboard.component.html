@@ -1,0 +1,14 @@
+<div class="container col-6">
+  <h1 class="display-4 text-center py-1">To-Do App</h1>
+  <div class="jumbotron p-5 shadow-sm">
+    <app-todo-form></app-todo-form>
+  </div>
+  <ul *ngIf="todos.length > 0" class="list-group pb-5">
+    <app-todo-item
+      *ngFor="let todo of todos"
+      [todo]="todo"
+      [selectedTodo]="selectedTodo"
+    ></app-todo-item>
+  </ul>
+  <span *ngIf="todos.length === 0" class="text-muted">No todos yet</span>
+</div>
